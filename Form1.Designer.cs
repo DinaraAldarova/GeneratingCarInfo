@@ -39,7 +39,17 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.numericUpDownStay = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownRide = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownReFuel = new System.Windows.Forms.NumericUpDown();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStay)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRide)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownReFuel)).BeginInit();
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -157,11 +167,78 @@
             this.richTextBox1.TabIndex = 7;
             this.richTextBox1.Text = "";
             // 
+            // numericUpDownStay
+            // 
+            this.numericUpDownStay.Location = new System.Drawing.Point(668, 37);
+            this.numericUpDownStay.Name = "numericUpDownStay";
+            this.numericUpDownStay.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownStay.TabIndex = 8;
+            this.numericUpDownStay.ValueChanged += new System.EventHandler(this.NumericUpDownStay_ValueChanged);
+            // 
+            // numericUpDownRide
+            // 
+            this.numericUpDownRide.Location = new System.Drawing.Point(668, 63);
+            this.numericUpDownRide.Name = "numericUpDownRide";
+            this.numericUpDownRide.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownRide.TabIndex = 8;
+            this.numericUpDownRide.ValueChanged += new System.EventHandler(this.NumericUpDownRide_ValueChanged);
+            // 
+            // numericUpDownReFuel
+            // 
+            this.numericUpDownReFuel.Location = new System.Drawing.Point(668, 89);
+            this.numericUpDownReFuel.Name = "numericUpDownReFuel";
+            this.numericUpDownReFuel.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDownReFuel.TabIndex = 8;
+            this.numericUpDownReFuel.ValueChanged += new System.EventHandler(this.NumericUpDownReFuel_ValueChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(613, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(175, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Колебания уровня топлива, +/- %";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(563, 39);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(99, 13);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Во время стоянки";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(578, 65);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(84, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Во время езды";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(556, 91);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(106, 13);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "Во время заправки";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.numericUpDownReFuel);
+            this.Controls.Add(this.numericUpDownRide);
+            this.Controls.Add(this.numericUpDownStay);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
@@ -174,8 +251,11 @@
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Генератор данных";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownStay)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownRide)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownReFuel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +274,13 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDownStay;
+        private System.Windows.Forms.NumericUpDown numericUpDownRide;
+        private System.Windows.Forms.NumericUpDown numericUpDownReFuel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }
 

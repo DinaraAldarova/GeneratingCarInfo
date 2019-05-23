@@ -20,6 +20,9 @@ namespace GeneratingCarInfo
             carInfo = new CarInfo();
             comboBox1.SelectedItem = comboBox1.Items[0];
             label6.Text = "Сейчас топлива " + (carInfo.fuel / 1000.0).ToString() + " л";
+            numericUpDownReFuel.Value = carInfo.NoizeReFuel;
+            numericUpDownRide.Value = carInfo.NoizeRide;
+            numericUpDownStay.Value = carInfo.NoizeStay;
 
             //Следующий кусок кода использовался для перевода бинарного файла в формат txt для удобного рассмотрения в блокноте
 
@@ -97,6 +100,21 @@ namespace GeneratingCarInfo
             dateTimePicker1.Enabled = false;
             button1.Enabled = true;
         }
+
+        private void NumericUpDownStay_ValueChanged(object sender, EventArgs e)
+        {
+            carInfo.NoizeStay = Convert.ToInt32(numericUpDownStay.Value);
+        }
+
+        private void NumericUpDownRide_ValueChanged(object sender, EventArgs e)
+        {
+            carInfo.NoizeRide = Convert.ToInt32(numericUpDownRide.Value);
+        }
+
+        private void NumericUpDownReFuel_ValueChanged(object sender, EventArgs e)
+        {
+            carInfo.NoizeReFuel = Convert.ToInt32(numericUpDownReFuel.Value);
+        }
     }
 
     public enum TypeActivity
@@ -142,6 +160,8 @@ namespace GeneratingCarInfo
         /// </summary>
         private uint timeNow = 0;
 
+        public int NoizeStay = 2, NoizeRide = 10, NoizeReFuel = 30;
+        
         private Random random = new Random();
         public CarInfo()
         {
@@ -201,17 +221,17 @@ namespace GeneratingCarInfo
                 {
                     fuel = startFuel + Convert.ToInt32(Math.Truncate(1.0 * value / ms * i));
                     //Показание счетчика для отчета, с погрешностью
-                    valueFuel = NoizeFuel(30);
+                    valueFuel = NoizeFuel(NoizeReFuel);
                 }
                 else if (activity == TypeActivity.Ride)
                 {
                     fuel = startFuel - Convert.ToInt32(Math.Truncate(fuelConsumption / ms * i));
                     //Показание счетчика для отчета, с погрешностью
-                    valueFuel = NoizeFuel(10);
+                    valueFuel = NoizeFuel(NoizeRide);
                 }
                 else if (activity == TypeActivity.Stay)
                     //Показание счетчика для отчета, с погрешностью
-                    valueFuel = NoizeFuel(2);
+                    valueFuel = NoizeFuel(NoizeStay);
 
                 const byte leng = 8;
                 binaryReport.vallen = leng;
