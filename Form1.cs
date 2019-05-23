@@ -120,8 +120,8 @@ namespace GeneratingCarInfo
     public class CarInfo
     {
         public string report = "";
-        public string puthShortReport = "C:\\Users\\Developer\\Desktop\\reportShort.rec";
-        public string puthFullReport = "C:\\Users\\Developer\\Desktop\\reportFull.txt";
+        public string puthShortReport = "reportShort.rec";
+        public string puthFullReport = "reportFull.txt";
 
         /// <summary>
         /// Объем топлива в баке (мл)
